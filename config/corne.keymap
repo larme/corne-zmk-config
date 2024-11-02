@@ -5,18 +5,16 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define DEFAULT_L 0
 #define SYMBOLS_L 1
 #define ARROWS_L  2
 #define NUMBERS_L 3
 
-
 / {
-
-	behaviors {
+    behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -27,47 +25,52 @@
             bindings = <&kp>, <&kp>;
         };
     };
-        keymap {
-                compatible = "zmk,keymap";
 
-                default_layer {
-			label = "DEF";
-                        bindings = <
-   &kp ESC   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp EQUAL    &kp BSPC
-   &kp SQT   &kp A &kp R &kp S &hm LCMD T &kp G   &kp M &hm LCMD N  &kp E     &kp I   &kp O       &kp RET
-   &kp TAB &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT   &kp SEMI   &kp FSLH 
-                  &kp LCMD &kp LSHFT &kp LCTRL   &to SYMBOLS_L &kp SPACE &to NUMBERS_L
-                        >;
-                };
+    combos {
+        compatible = "zmk,combos";
 
-                symbols_layer {
-			label = "SYMB";
-                        bindings = <
-   &kp ESC    &kp EXCL       &kp AT       &kp HASH       &kp DLLR       &kp PRCNT         &kp CARET   &kp AMPS   &kp STAR &kp MINUS  &none &kp BSPC
-   &kp GRAVE &none &none &none &none &kp PLUS        &kp HOME &kp LBRC &kp RBRC &kp END &kp BSLH &kp RET
-   &kp TAB   &none &none &none &none &kp MINUS        &kp LBKT   &kp LPAR   &kp RPAR &kp RBKT &none &to ARROWS_L
-                     &kp LCMD &kp LSHFT &to DEFAULT_L     &none &kp SPACE  &to NUMBERS_L
-                        >;
-                };
-
-                arrows_layer {
-			label = "NAV";
-                        bindings = <
-   &kp ESC  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR            &none &none &none &none &none &kp BSPC
-   &none &none   &kp C_PP &kp C_VOL_DN &kp C_VOL_UP &kp C_BRI_UP                     &kp LEFT &kp DOWN &kp UP  &kp RIGHT &none &kp RET
-   &kp TAB &none   &none   &kp C_PREV &kp C_NEXT &kp C_BRI_DN                         &none &none &none &none &none &none 
-                    	     &kp LCMD &kp LSHFT   &to DEFAULT_L                        &to SYMBOLS_L &kp SPACE    &to NUMBERS_L
-                        >;
-                };
-
-                numbers_layer {
-			label = "NUM";
-                        bindings = <
-   &kp ESC  &none &none &none &none &none                 &none &hm F7 N7      &hm F8 N8      &hm F9 N9 &none &hm DEL BSPC
-   &none   &none &none   &none   &kp STAR &kp PLUS           &kp EQUAL &hm F4 N4      &hm F5 N5      &hm F6 N6 &hm F12 DOT &kp RET
-   &kp TAB &none   &none   &none      &kp FSLH &kp MINUS       &hm F10 N0		&hm F1 N1      &hm F2 N2      &hm F3 N3 &kp COMMA &to ARROWS_L
-                    	     &kp LCMD &kp LSHFT   &to DEFAULT_L  &to SYMBOLS_L &kp SPACE    &none
-                        >;
-                };
+        comb_l_ctrl {
+            bindings = <&kp LCTRL>;
+            key-positions = <4 5>;
         };
+
+        comb_r_ctrl {
+            bindings = <&kp RCTRL>;
+            key-positions = <6 7>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            label = "DEF";
+            bindings = <
+&none  &kp Q      &kp W  &kp E     &kp R         &kp Y             &kp Y  &kp U  &kp I  &kp O          &kp P       &none
+&none  &kp A      &kp S  &kp D     &kp F         &kp G             &kp H  &kp J  &kp K  &kp L          &kp ESCAPE  &none
+&none  &kp SPACE  &kp Z  &kp X     &kp C         &kp V             &kp B  &kp N  &kp M  &kp BACKSPACE  &kp RCTRL   &none
+                         &kp LCMD  &kp LEFT_ALT  &kp LEFT_SHIFT    &to 1  &to 1  &to 2
+            >;
+        };
+
+        symbols_layer {
+            label = "SYMB";
+            bindings = <
+&none  &kp NUMBER_1      &kp NUMBER_2       &kp NUMBER_3          &kp NUMBER_4  &kp NUMBER_5     &kp NUMBER_6    &kp N7          &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0  &none
+&none  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp MINUS             &kp EQUAL     &kp SQT          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp TAB       &none
+&none  &kp SPACE         &kp GRAVE          &kp NON_US_BACKSLASH  &kp SLASH     &kp SEMICOLON    &none           &kp ENTER       &kp COMMA     &kp PERIOD       &kp RCTRL     &none
+                                            &kp LCMD              &kp LEFT_ALT  &kp LSHIFT       &to 1           &to 1           &to 2
+            >;
+        };
+
+        function_layer {
+            label = "FUN";
+            bindings = <
+&none  &kp F1      &kp F2      &kp F3    &kp F4     &kp F5        &none  &none              &none            &none        &none  &none
+&none  &none       &none       &none     &none      &none         &none  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none        &none  &none
+&none  &bt BT_PRV  &bt BT_NXT  &none     &none      &bt BT_CLR    &none  &none              &none            &bootloader  &none  &none
+                               &kp LCMD  &kp LSHFT  &to 0         &to 1  &to 1              &to 2
+            >;
+        };
+    };
 };
