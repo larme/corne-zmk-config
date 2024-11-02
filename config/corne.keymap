@@ -49,7 +49,7 @@
 &none  &kp Q      &kp W  &kp E     &kp R         &kp Y             &kp Y  &kp U  &kp I  &kp O          &kp P       &none
 &none  &kp A      &kp S  &kp D     &kp F         &kp G             &kp H  &kp J  &kp K  &kp L          &kp ESCAPE  &none
 &none  &kp SPACE  &kp Z  &kp X     &kp C         &kp V             &kp B  &kp N  &kp M  &kp BACKSPACE  &kp RCTRL   &none
-                         &kp LCMD  &kp LEFT_ALT  &kp LEFT_SHIFT    &to 1  &to 1  &to 2
+                         &kp LCMD  &kp LEFT_ALT  &kp LEFT_SHIFT    &mo 1  &mo 1  &mo 2
             >;
         };
 
@@ -59,7 +59,7 @@
 &none  &kp NUMBER_1      &kp NUMBER_2       &kp NUMBER_3          &kp NUMBER_4  &kp NUMBER_5     &kp NUMBER_6    &kp N7          &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0  &none
 &none  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp MINUS             &kp EQUAL     &kp SQT          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp TAB       &none
 &none  &kp SPACE         &kp GRAVE          &kp NON_US_BACKSLASH  &kp SLASH     &kp SEMICOLON    &none           &kp ENTER       &kp COMMA     &kp PERIOD       &kp RCTRL     &none
-                                            &kp LCMD              &kp LEFT_ALT  &kp LSHIFT       &to 1           &to 1           &to 2
+                                            &kp LCMD              &kp LEFT_ALT  &kp LSHIFT       &mo 1           &mo 1           &mo 2
             >;
         };
 
@@ -69,7 +69,7 @@
 &none  &kp F1      &kp F2      &kp F3    &kp F4     &kp F5        &none  &none              &none            &none        &none  &none
 &none  &none       &none       &none     &none      &none         &none  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none        &none  &none
 &none  &bt BT_PRV  &bt BT_NXT  &none     &none      &bt BT_CLR    &none  &none              &none            &bootloader  &none  &none
-                               &kp LCMD  &kp LSHFT  &to 0         &to 1  &to 1              &to 2
+                               &kp LCMD  &kp LSHFT  &to 0         &mo 1  &mo 1              &to 2
             >;
         };
     };
