@@ -34,8 +34,8 @@
             key-positions = <4 5>;
         };
 
-        comb_r_ctrl {
-            bindings = <&kp RCTRL>;
+        comb_r_bksp {
+            bindings = <&kp BACKSPACE>;
             key-positions = <6 7>;
         };
     };
@@ -46,7 +46,7 @@
         default_layer {
             label = "DEF";
             bindings = <
-&none  &kp Q      &kp W  &kp E     &kp R         &kp Y             &kp Y  &kp U  &kp I  &kp O          &kp P       &none
+&none  &kp Q      &kp W  &kp E     &kp R         &kp T             &kp Y  &kp U  &kp I  &kp O          &kp P       &none
 &none  &kp A      &kp S  &kp D     &kp F         &kp G             &kp H  &kp J  &kp K  &kp L          &kp ESCAPE  &none
 &none  &kp SPACE  &kp Z  &kp X     &kp C         &kp V             &kp B  &kp N  &kp M  &kp BACKSPACE  &kp RCTRL   &none
                          &kp LCMD  &kp LEFT_ALT  &kp LEFT_SHIFT    &mo 1  &mo 1  &mo 2
@@ -66,10 +66,10 @@
         function_layer {
             label = "FUN";
             bindings = <
-&none  &kp F1      &kp F2      &kp F3    &kp F4     &kp F5        &none  &none              &none            &none        &none  &none
-&none  &none       &none       &none     &none      &none         &none  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none        &none  &none
-&none  &bt BT_PRV  &bt BT_NXT  &none     &none      &bt BT_CLR    &none  &none              &none            &bootloader  &none  &none
-                               &kp LCMD  &kp LSHFT  &to 0         &mo 1  &mo 1              &to 2
+&none  &kp F1        &kp F2        &kp F3        &kp F4     &kp F5        &none  &none              &none            &none        &none  &none
+&none  &none         &none         &none         &none      &none         &none  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none        &none  &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none      &bt BT_CLR    &none  &none              &none            &bootloader  &none  &none
+                                   &kp LCMD      &kp LSHFT  &to 0         &mo 1  &mo 1              &mo 2
             >;
         };
     };
